@@ -1,41 +1,108 @@
-version: "2.0"
+version: "3.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Mensagem de boas vindas no webchat
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: boas_vindas
+  - action: utter_boas_vindas
 
-- rule: faq
+- rule: Sauda o usuario
   steps:
-  - intent: faq
-  - action: utter_faq
+  - intent: greetings
+  - action: utter_greetings
 
-- rule: chitchat
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
   steps:
-  - intent: chitchat
-  - action: utter_chitchat
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
 
-- rule: out of scope
+- rule: Pede para o usuario reformular a mensagem caso insira algo inesperado
   steps:
-  - intent: outofscope
-  - action: utter_outofscope
+  - intent: fora_de_contexto
+  - action: utter_please_rephrase
 
-- rule: Activate, contact us form
-  condition:
-  - active_loop: null
-  steps:
-  - intent: contact_us
-  - action: contact_us_form
-  - active_loop: contact_us_form
+#- rule: Fala sobre o funcionamento do RU
+#  steps:
+#  - intent: funcionamento_ru
+#  - action: utter_funcionamento_ru
 
-- rule: Deactivate contact us form
-  condition:
-  - active_loop: contact_us_form
+#- rule: Locais para encontrar atendimento medico gratuito
+#  steps:
+#  - intent: onde_encontrar_ubs
+#  - action: utter_onde_encontrar_ubs
+
+#- rule: Fala sobre as medidas tomadas para o retorno presencial
+#  steps:
+#  - intent: protocolos_sanitarios
+#  - action: utter_protocolos_sanitarios
+
+- rule: Orienta o usuario caso ele peça ajuda
   steps:
-  - action: contact_us_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_submit_contact_us_form
+  - intent: ajuda
+  - action: utter_ajuda
+
+- rule: Fala sobre as medidas tomadas para a retomada das atividades presenciais
+  steps:
+  - intent: retomada_de_atividades
+  - action: utter_retomada_de_atividades
+
+- rule: Fala sobre os reponsáveis pelo Retorno Seguro nos campus 
+  steps:
+  - intent: participacao_da_comunidade
+  - action: utter_participacao_da_comunidade
+
+- rule: Informa a data do retorno das aulas
+  steps:
+  - intent: data_retorno_presencial
+  - action: utter_data_retorno_presencial
+
+- rule: Informa que as aulas serao realizadas presencialmente 
+  steps:
+  - intent: serao_presenciais
+  - action: utter_serao_presenciais
+
+- rule: Informa quais servidores podem permanecer com atividades remotas
+  steps:
+  - intent: trabalho_remoto_servidores
+  - action: utter_trabalho_remoto_servidores
+
+- rule: Informa aos servidores pais sobre a possibilidade de continuar suas atividades remotamente
+  steps:
+  - intent: trabalho_remoto_pais
+  - action: utter_trabalho_remoto_pais
+
+- rule: Fala sobre a possibilidade de pessoas com fatores de risco voltarem a rotina presencial
+  steps:
+  - intent: retorno_ao_trabalho_fator_de_risco
+  - action: utter_retorno_ao_trabalho_fator_de_risco
+
+- rule: Fala sobre a obrigatoriedade da apresentacao do comprovante de vacinacao
+  steps:
+  - intent: comprovante_de_vacinacao
+  - action: utter_comprovante_de_vacinacao
+
+- rule: Fala sobre os casos onde a vacina e contraindicada por um medico
+  steps:
+  - intent: contraindicacao_vacina
+  - action: utter_contraindicacao_vacina
+
+- rule: Fala sobre servidores que nao possuem todas as doses da vacina
+  steps:
+  - intent: servidores_nao_vacinados
+  - action: utter_servidores_nao_vacinados
+
+- rule: Fala sobre estudantes que nao possuem todas as doses da vacina
+  steps:
+  - intent: estudantes_nao_vacinados
+  - action: utter_estudantes_nao_vacinados
+
+- rule: Fala sobre as medidas de seguranca que devem ser seguidas dentro da universidade
+  steps:
+  - intent: medidas_de_seguranca
+  - action: utter_medidas_de_seguranca
+
+#- rule: Say 'I am a bot' anytime the user challenges
+#  steps:
+#  - intent: bot_challenge
+#  - action: utter_iamabot

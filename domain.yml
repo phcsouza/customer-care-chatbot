@@ -1,118 +1,92 @@
-version: "2.0"
+version: "3.0"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - faq
-  - chitchat
-  - contact_us
-  - outofscope
-
-slots:
-  name:
-    type: text
-    influence_conversation: false
-  email:
-    type: text
-    influence_conversation: false
-  phone_number:
-    type: text
-    influence_conversation: false
-  message:
-    type: text
-    influence_conversation: false
-  confirm_details:
-    type: any
-    influence_conversation: false
-
-entities:
-- email
-- number
+  - boas_vindas
+  - greetings
+  - nlu_fallback
+  - ajuda
+  - retomada_de_atividades
+  - participacao_da_comunidade
+  - data_retorno_presencial
+  - serao_presenciais
+  - trabalho_remoto_servidores
+  - trabalho_remoto_pais
+  - retorno_ao_trabalho_fator_de_risco
+  - comprovante_de_vacinacao
+  - contraindicacao_vacina
+  - servidores_nao_vacinados
+  - estudantes_nao_vacinados
+  - medidas_de_seguranca
+  - fora_de_contexto
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_boas_vindas:
+  - text: "Oi, tudo bem? Caso tenha dúvidas sobre o retorno das aulas presenciais na UNIFESP BS é só perguntar que eu tento responder o que estiver ao meu alcance. Se não souber por onde começar, digite AJUDA."
 
-  utter_chitchat/mood_unhappy:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_greetings:
+  - text: "Oi, tudo bem? Em que posso ajudar?"
 
-  utter_chitchat/mood_great:
-  - text: "Great, carry on!"
+#  utter_onde_encontrar_ubs:
+#  - text: "Você pode encontrar atendimento médico mais próximo através do site: http://cnes.datasus.gov.br/pages/estabelecimentos/consulta.jsp"
 
-  utter_chitchat/bot_challenge:
-    - text: "I am a bot, powered by Droid City."
+#  utter_funcionamento_ru:
+#  - text: "Infelizmente o contrato com a empresa que fornece alimentação teve de ser suspenso. Você pode acompanhar as atualizações sobre esse e outros assuntos na página: https://retornosegurobs.unifesp.br/funcionamento"
 
-  utter_faq/shipping_duration:
-  - text: "Standard Shipping usually takes about 5-7 business days. Premium Shipping takes about 2-3 business days."
+#  utter_protocolos_sanitarios:
+#  - text: "No link a seguir você pode conferir o documento informando as medidas que estão sendo tomadas para o retorno das atividades presenciais: https://www.unifesp.br/reitoria/dci/images/Recomendacoes_Retomada_CPEC.pdf"
 
-  utter_faq/payment_modes:
-  - text: "Payment mode we are supporting:\nCOD\nDebit/Credit cards\nEMI\nWallets."
+  utter_please_rephrase:
+  - text: "Desculpe, ainda não sou capaz de entender essa mensagem. Poderia reformular a frase?"
 
-  utter_faq/track_product:
-  - text: "You can track your product from accounts -> Orders. There you will find list of orders and select one of them to track."
+  utter_ajuda:
+  - text: "Esses são os assuntos que eu conheço, você pode utilizá-los para encontrar o que deseja: \n
+           - Medidas tomadas para a volta das atividades presenciais. \n
+           - Participação da comunidade na volta das atividades presenciais. \n
+           - Data de início das aulas. \n
+           - Servidores que podem permanecer com suas atividades remotas. \n
+           - Trabalho remoto para servidores pais que precisem cuidar de seus filhos em casa. \n
+           - Volta das atividades para servidores que possuam fatores de risco. \n
+           - Obrigatoriedade do comprovante de vacinação. \n
+           - Orientações para pessoas com contraindicações à vacina. \n
+           - Servidores não vacinados sem justificativa. \n
+           - Estudantes não vacinados sem justificativa. \n
+           - Medidas de biossegurança obrigatórias dentro da universidade."
 
-  utter_faq/return_policy:
-  - text: "If you received a product and want to return it. You can return within 14 days of delivery date."
+  utter_retomada_de_atividades:
+  - text: "As atividades presenciais de ensino, pesquisa e extensão – incluindo atividades assistenciais e administrativas – nos campi da Unifesp serão retomadas de forma segura e gradual, por meio de diretrizes, orientações e protocolos específicos, a fim de se respeitar as condições de segurança de cada espaço e manter as normas de biossegurança. A universidade está discutindo cuidadosamente o retorno das atividades presenciais, de forma a garantir um ambiente seguro durante a pandemia de covid-19."
 
-  utter_outofscope:
-  - text: "Sorry, I wasn't able to understand. Could you please rephrase it?"
+  utter_participacao_da_comunidade:
+  - text: "As comissões locais para o planejamento do retorno seguro das atividades presenciais serão as responsáveis por elaborar e acompanhar a implementação do Plano de Retorno Seguro das atividades acadêmicas e administrativas do campus e de suas unidades universitárias. Elas terão representantes de instâncias acadêmicas e administrativas do campus, além de representantes discente(s), docente(s) e técnicos(as)."
 
-  utter_ask_name:
-  - text: "Could you please tell me your name?"
+  utter_data_retorno_presencial:
+  - text: "O início do 1.º semestre de 2022 da graduação para veteranos(as) e calouros(as) da Unifesp de todos os campi será no dia 6 de abril de 2022."
 
-  utter_ask_email:
-  - text: "Can you please provide me your email address?"
+  utter_serao_presenciais:
+  - text: "Sim."
 
-  utter_ask_phone_number:
-  - text: "Can you please provide me your phone number?"
+  utter_trabalho_remoto_servidores:
+  - text: "Pessoas que, mediante autodeclaração, apresentem as seguintes condições e/ou fatores de risco: idade igual ou superior a 60 anos, tabagismo, obesidade, cardiopatias graves ou descompensadas, hipertensão arterial, doença cerebrovascular, pneumopatias, imunodepressão, doenças renais, diabetes melito, doenças cromossômicas, neoplasia maligna, cirrose hepática, doenças hematológicas, gestantes e lactantes. Atenção: estas disposições não se aplicam ao(à) servidor(a) que atua em atividades essenciais à Unifesp, ao HSP/HU, ao HU2 ou em outras unidades."
 
-  utter_ask_message:
-  - text: "Please tell me your query so I can forward that to our team."
+  utter_trabalho_remoto_pais:
+  - text: "Poderão permanecer em trabalho remoto o pai ou a mãe que tiverem seus filhos com as aulas presenciais ou os serviços de creche suspensos, e que necessitem da assistência de um adulto na residência, os quais não possuam cônjuge, companheiro ou outro familiar apto a prestar esta assistência. Atenção: estas disposições não se aplicam ao(à) servidor(a) que atua em atividades essenciais à Unifesp, ao HSP/HU, ao HU2 ou em outras unidades."
 
-  utter_ask_confirm_details:
-  - buttons:
-    - title: Yes
-      payload: Yes
-    - title: No
-      payload: No
-    text: "These are the details I captured. Please confirm them below:\n Name: {name}\nEmail: {email}\nPhone No: {phone_number}\nMessage: {message}"
+  utter_retorno_ao_trabalho_fator_de_risco:
+  - text: "Caso o(a) servidor(a) tenha alguma condição de risco à saúde e pretenda retornar ao trabalho presencial, por livre manifestação de vontade, deve ter completado o ciclo vacinal contra a covid-19."
 
-  utter_mail_success:
-  - text: "I have mailed all details to our team. You will be reverted back within 48hrs."
+  utter_comprovante_de_vacinacao:
+  - text: "Sim. Docentes, TAEs, estudantes, terceirizados(as) e visitantes só poderão frequentar os espaços da instituição se apresentarem o documento. A comprovação corresponderá ao esquema vacinal completo, compreendendo todas as doses disponibilizadas no Estado de São Paulo para cada faixa etária, incluindo dose(s) de reforço, em conformidade com o cronograma de vacinação especificado pelo governo estadual."
 
-  utter_mail_canceled:
-  - text: "I have canceled the mail. Anything else you want help with?"
+  utter_contraindicacao_vacina:
+  - text: "Será necessário apresentar atestado médico de contraindicação explícita da aplicação da vacina e devidamente validada pelos(as) profissionais de saúde especialistas do Comitê Permanente para Enfrentamento da Pandemia de Coronavírus (CPEC) da Unifesp."
 
-  utter_goodbye:
-    - text: "Bye"
+  utter_servidores_nao_vacinados:
+  - text: "Não poderá permanecer em seu local de trabalho e terá o dia considerado como falta injustificada, além de não poder permanecer nas dependências da Unifesp, cabendo à chefia imediata reportar as ocorrências à Propessoas."
 
-actions:
-- validate_contact_us_form
-- action_submit_contact_us_form
+  utter_estudantes_nao_vacinados:
+  - text: "Estarão impedidos(as) de: frequentar componentes curriculares dos cursos de graduação e dos cursos e programas de pós-graduação; compor as equipes das ações de extensão e cultura registradas no Sistema de Informações de Extensão (Siex); frequentar os restaurantes universitários, bibliotecas, unidades acadêmicas e administrativas."
 
-forms:
-  contact_us_form:
-    required_slots:
-      name:
-      - type: from_text
-      email:
-      - type: from_entity
-        entity: email
-      phone_number:
-      - type: from_entity
-        entity: number
-      message:
-      - type: from_text
-      confirm_details:
-      - intent: affirm
-        value: yes
-        type: from_intent
-      - intent: deny
-        value: no
-        type: from_intent
+  utter_medidas_de_seguranca:
+  - text: "Uso de máscaras por todos(as) servidores(as), estudantes, técnicos(as), colaboradores(as), fornecedores(as), funcionários(as) terceirizados(as) e visitantes; higienização frequente das mãos e uso de álcool gel; e evitar aglomerações. Reitera-se que é essencial que mesmo as pessoas que tomaram as vacinas para covid-19 continuem respeitando rigorosamente os protocolos de biossegurança."
 
 session_config:
   session_expiration_time: 60

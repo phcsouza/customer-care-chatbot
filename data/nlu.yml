@@ -1,66 +1,153 @@
-version: "2.0"
+version: "3.0"
 
 nlu:
-- intent: greet
+- intent: greetings
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - Olá, tudo bem?
+    - Tudo bem contigo?
+    - Estou precisando de uma informação
+    - Tem alguém online?
+    - Alguém aí?
+    - Está on-line?
+    - Ola
+    - Boa noite
+    - Boa tarde
+    - Bom dia
+    - E aí
+    - Ei
+    - Oi
+    - oie
+    - Oiii!
 
-- intent: goodbye
+- intent: ajuda
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - Ajuda
+    - AJUDA
+    - Poderia me ajudar?
+    - Ajude-me
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+#- intent: protocolos_sanitarios
+#  examples: |
+#    - Protocolos sanitários
+#    - protocolos sanitarios adotados
+#    - condições sanitarias
+#    - Medidas sanitárias tomadas
+#    - Como será realizado o retorno às aulas presenciais?
+#    - Orientações para a volta às aulas
+#    - Diretrizes para alunos
+#    - Higienização dos ambientes
+#    - Locais higienizados
 
-- intent: deny
+- intent: retomada_de_atividades
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - Como será a retomada das atividades presenciais da Unifesp?
+    - Como o retorno das atividades presenciais será realizado?
+    - O retorno é realmente seguro?
+    - De que forma a retomada gradual aos campi será feita?
+    - Medidas tomadas para a volta das atividades presenciais
+    - Como a UNIFESP vai retomar as atividades presenciais? 
+    - Como se dará o retorno dos eventos presenciais?
+    - Como funcionará a reabertura gradual dos campi?
+    - Medidas tomadas para retomar as atividades presenciais
+    - De que maneira a UNIFESP vai suas atividades?
+    - Qual a forma adotada pela UNIFESP para retomar as atividades?
 
-- intent: contact_us
+- intent: participacao_da_comunidade
   examples: |
-    - contact team
-    - how to contact you
-    - can you connect me with team
-    - connect with team
-    - provide support
-    - please connect me with someone from your team
+    - Como será a participação da comunidade Unifesp na retomada gradual das atividades presenciais?
+    - Quem são os responsáveis pelo planejamento do retorno seguro?
+    - Quem organiza o Plano de retorno?
+    - Participação da comunidade na volta das atividades presenciais
+    - Como a comunidade da Unifesp participará da retomada gradual dos eventos presenciais?
+    - Quem está encarregado pelo planejamento do retorno presencial?
+    - Envolvimento da comunidade no retorno aos eventos presenciais
 
-- intent: outofscope
+- intent: data_retorno_presencial
   examples: |
+    - Quando retornam as aulas de graduação do 1.º semestre de 2022?
+    - Data de início das aulas
+    - Quando começam as aulas
+    - Quando voltam as atividades presenciais
+    - Previsão para o retorno das aulas nos campi
+
+- intent: serao_presenciais
+  examples: |
+    - As aulas serão 100% presenciais?
+    - Todas as aulas serão presenciais?
+    - Esse semestre será presencial?
+    - Acabaram as aulas on-line?
+    - Acabou o período remoto?
+    - As atividades em ADE terminaram?
+
+- intent: trabalho_remoto_servidores
+  examples: |
+    - Quais servidores(as) podem permanecer em trabalho remoto?
+    - Servidores que podem permanecer com suas atividades remotas
+    - Em quais situações um servidor pode permanecer com suas atividades em casa?
+    - Em quais casos o home office ainda é recomendado?
+    - Quem pode continuar exercendo suas atividades a distância?
+
+- intent: trabalho_remoto_pais
+  examples: |
+    - Meu(s) filho(s) permanece com as aulas presenciais suspensas, posso continuar em trabalho remoto?
+    - Trabalho remoto para servidores pais que precisem cuidar de seus filhos em casa
+    - Pais que não têm com quem deixar seus filhos podem continuar em home office?
+    - Não tenho com quem deixar meus filhos posso continuar com o trabalho remoto?
+    - Meus filhos continuam com as aulas presenciais suspensas, devo retornar ao trabalho presencial mesmo assim?
+
+- intent: retorno_ao_trabalho_fator_de_risco
+  examples: |
+    - Posso retornar ao trabalho presencial mesmo possuindo um fator de risco?
+    - Volta das atividades para servidores que possuam fatores de risco
+    - Posso voltar ao trabalho presencial mesmo com condição de risco à saúde?
+    - Possuo fatores de risco, mas meu ciclo vacinal está completo, posso voltar às atividades presenciais?
+    - Servidores com comorbidades podem voltar a trabalhar presencialmente?
+
+- intent: comprovante_de_vacinacao
+  examples: |
+    - Será preciso apresentar comprovante de vacina contra covid-19 para frequentar a universidade?
+    - Obrigatoriedade do comprovante de vacinação
+    - A apresentação da carteira de vacinação é obrigatória?
+    - Devo apresentar o comprovante de vacinação para frequentar o campus?
+    - Preciso apresentar a cartira de vacinação à universidade?
+
+- intent: contraindicacao_vacina
+  examples: |
+    - E se eu possuir alguma contraindicação para a vacina?
+    - Orientações para pessoas com contraindicações à vacina
+    - Não pude tomar a vacina por recomendação médica, o que devo fazer?
+    - Como proceder caso o médico não recomende que eu seja vacinado?
+    - O que deve ser feito nos casos onde a vacina não é indicada?
+
+- intent: servidores_nao_vacinados
+  examples: |
+    - O que acontece se o(a) servidor(a) não apresentar nem o comprovante de vacinação nem o relatório médico que confirme a contraindicação para a vacinação contra covid-19?
+    - Servidores não vacinados sem justificativa
+    - Quais as consequências caso um servidor opte por não se vacinar?
+
+- intent: estudantes_nao_vacinados
+  examples: |
+    - O que acontece aos(às) estudantes que não se vacinarem por decisão própria, sem justificativa médica prevista?
+    - Estudantes não vacinados sem justificativa
+
+- intent: medidas_de_seguranca
+  examples: |
+    - Além disso, quais outras medidas de biossegurança deverão ser obrigatórias nos espaços da universidade?
+    - Medidas de biossegurança obrigatórias dentro da universidade
+    - Quais os protocolos que deverão ser seguidos no retorno presencial?
+    - Quais medidas sanitárias serão adotadas para o retorno?
+
+- intent: fora_de_contexto
+  examples: |
+    - lkflsdkjfsdf
+    - sdfdffdfsdfsdf
+    - sdfsdfsdflk
+    - slkfwerpoitwe
+    - rwrposdf
+    - pewrpewirpowemslnf
+    - swdflkfjl
+    - Vai chover hoje?
+    - Conte uma piada
     - I am asking out of scope question
     - what is 4 +3 =?
     - can you tell me do you love me?
