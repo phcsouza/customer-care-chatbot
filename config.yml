@@ -12,8 +12,11 @@ pipeline:
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: char_wb
-    min_ngram: 1
+    min_ngram: 2
     max_ngram: 4
+    stopwords:
+     - ru
+    min_df: 0.05
   - name: DIETClassifier
     epochs: 100
     model_confidence: softmax
@@ -24,7 +27,7 @@ pipeline:
     epochs: 100
     constrain_similarities: True
   - name: FallbackClassifier
-    threshold: 0.65
+    threshold: 0.60
     ambiguity_threshold: 0.1
 
 policies:
