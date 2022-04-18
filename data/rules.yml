@@ -16,12 +16,10 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_please_rephrase
-  - action: utter_please_rephrase
 
 - rule: Pede para o usuario reformular a mensagem caso insira algo inesperado
   steps:
   - intent: fora_de_contexto
-  - action: utter_please_rephrase
   - action: utter_please_rephrase
 
 #- rule: Fala sobre o funcionamento do RU
