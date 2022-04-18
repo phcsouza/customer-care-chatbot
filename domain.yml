@@ -36,7 +36,7 @@ responses:
 #  utter_protocolos_sanitarios:
 #  - text: "No link a seguir você pode conferir o documento informando as medidas que estão sendo tomadas para o retorno das atividades presenciais: https://www.unifesp.br/reitoria/dci/images/Recomendacoes_Retomada_CPEC.pdf"
 
-utter_please_rephrase:
+  utter_please_rephrase:
   - text: "Desculpe, ainda não sou capaz de entender essa mensagem. Poderia reformular a frase?"
   - text: "Desculpe, não consegui te entender direito. Você pode perguntar de outra forma?"
   - text: "Desculpe, não entendi. Poderia reescrever utilizando outras palavras?"
