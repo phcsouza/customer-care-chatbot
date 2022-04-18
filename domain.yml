@@ -21,7 +21,8 @@ intents:
 
 responses:
   utter_boas_vindas:
-  - text: "Oi, tudo bem? Caso tenha dúvidas sobre o retorno das aulas presenciais na UNIFESP BS é só perguntar que eu tento responder o que estiver ao meu alcance. Se não souber por onde começar, digite AJUDA."
+  - text: "Oi, tudo bem? Caso tenha dúvidas sobre o retorno das aulas presenciais na UNIFESP é só perguntar que eu tento responder o que estiver ao meu alcance. Se não souber por onde começar, digite AJUDA."
+  - text: "Oi, eu sou um bot. Caso tenha dúvidas sobre o retorno das aulas presenciais na UNIFESP é só perguntar que eu tento responder o que estiver ao meu alcance. Para entender como você pode interagir comigo basta escrever AJUDA."
 
   utter_greetings:
   - text: "Oi, tudo bem? Em que posso ajudar?"
@@ -36,7 +37,7 @@ responses:
 #  - text: "No link a seguir você pode conferir o documento informando as medidas que estão sendo tomadas para o retorno das atividades presenciais: https://www.unifesp.br/reitoria/dci/images/Recomendacoes_Retomada_CPEC.pdf"
 
   utter_please_rephrase:
-  - text: "Desculpe, ainda não sou capaz de entender essa mensagem. Poderia reformular a frase?"
+  - text: "Desculpe, ainda não sou capaz de entender essa mensagem. Você pode tentar reformular a frase ou digitar AJUDA para que eu liste os assuntos que estou apto para conversar."
 
   utter_ajuda:
   - text: "Esses são os assuntos que eu conheço, você pode utilizá-los para encontrar o que deseja: \n
