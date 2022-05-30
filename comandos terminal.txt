@@ -1,0 +1,16 @@
+Mudar diretório
+cd C:\Users\paulo\OneDrive\Documents\Unifesp\Organização da Vida\Repositório\customer-care-chatbot
+
+Iniciar o ambiente
+conda activate install_demo
+
+treinar o bot
+rasa train
+
+rodar o bot no navegador
+rasa run -m models --enable-api --cors “*” --debug
+
+//////////////////////////////////////////////////
+
+rodar o bot no terminal
+rasa shell
