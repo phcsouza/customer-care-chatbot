@@ -12,8 +12,7 @@ RUN apt-get update \
 WORKDIR /app
 
 # upgrade pip version
-RUN pip install --no-cache-dir --upgrade pip
-
+RUN pip install --no-cache-dir --upgrade pip protobuf<4
 RUN pip install rasa==3.0
 
 ADD config.yml config.yml
