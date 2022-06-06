@@ -13,8 +13,7 @@ WORKDIR /app
 
 # upgrade pip version
 RUN pip install --no-cache-dir --upgrade pip
-RUN pip install protobuf==3.20.*
-RUN PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+RUN pip install protobuf==3.20.0
 RUN pip install rasa==3.0
 
 ADD config.yml config.yml
